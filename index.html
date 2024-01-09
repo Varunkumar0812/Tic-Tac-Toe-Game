@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+
+    <style>
+        button {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #5A96E3;
+            font-size: 150px;
+            color: rgb(0, 0, 0, 0.5);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            transition: 0.1s;
+            cursor: pointer;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #c8f9ff;
+        }
+
+        .row {
+            background-color: #c8f9ff;
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 0px 8px 0px 8px;
+        }
+
+        .row:first-child {
+            padding-top: 8px;
+        }
+
+        .row:last-child {
+            padding-bottom: 8px;
+        }
+
+        @media all and (max-width : 620px) {
+            body {
+                background-color: green;
+            }
+
+            button {
+                width: 30vw;
+                height: 30vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+            <button id="but1"></button>
+            <button id="but2"></button>
+            <button id="but3"></button>
+        </div>
+        <div class="row">
+            <button id="but4"></button>
+            <button id="but5"></button>
+            <button id="but6"></button>
+        </div>
+        <div class="row">
+            <button id="but7"></button>
+            <button id="but8"></button>
+            <button id="but9"></button>
+        </div>
+    </div>
+
+    <script>
+        var currValue = 'X';
+
+        var but1 = document.getElementById('but1');
+        but1.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+
+            checkWin();
+        });
+        var but2 = document.getElementById('but2');
+        but2.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but3 = document.getElementById('but3');
+        but3.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but4 = document.getElementById('but4');
+        but4.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but5 = document.getElementById('but5');
+        but5.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but6 = document.getElementById('but6');
+        but6.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but7 = document.getElementById('but7');
+        but7.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but8 = document.getElementById('but8');
+        but8.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+        var but9 = document.getElementById('but9');
+        but9.addEventListener('click', function () {
+            this.disabled = true;
+            this.innerHTML = currValue;
+            this.style.background = '#0A6EBD';
+
+            if (currValue == 'X') {
+                currValue = 'O';
+            }
+            else if (currValue == 'O') {
+                currValue = 'X';
+            }
+            checkWin();
+        });
+
+        function checkWin() {
+            var val1 = but1.innerHTML;
+            var val2 = but2.innerHTML;
+            var val3 = but3.innerHTML;
+            var val4 = but4.innerHTML;
+            var val5 = but5.innerHTML;
+            var val6 = but6.innerHTML;
+            var val7 = but7.innerHTML;
+            var val8 = but8.innerHTML;
+            var val9 = but9.innerHTML;
+
+
+            if ((val1 === 'X' && val2 === 'X' && val3 === 'X') ||
+                (val1 === 'X' && val4 === 'X' && val7 === 'X') ||
+                (val1 === 'X' && val5 === 'X' && val9 === 'X') ||
+                (val2 === 'X' && val5 === 'X' && val8 === 'X') ||
+                (val3 === 'X' && val6 === 'X' && val9 === 'X') ||
+                (val3 === 'X' && val5 === 'X' && val7 === 'X') ||
+                (val4 === 'X' && val5 === 'X' && val6 === 'X') ||
+                (val7 === 'X' && val8 === 'X' && val9 === 'X')) {
+                window.alert('Congratulations X Won!, click to play again');
+
+                resetAll();
+            }
+            else if ((val1 === 'O' && val2 === 'O' && val3 === 'O') ||
+                (val1 === 'O' && val4 === 'O' && val7 === 'O') ||
+                (val1 === 'O' && val5 === 'O' && val9 === 'O') ||
+                (val2 === 'O' && val5 === 'O' && val8 === 'O') ||
+                (val3 === 'O' && val6 === 'O' && val9 === 'O') ||
+                (val3 === 'O' && val5 === 'O' && val7 === 'O') ||
+                (val4 === 'O' && val5 === 'O' && val6 === 'O') ||
+                (val7 === 'O' && val8 === 'O' && val9 === 'O')) {
+                window.alert('Congratulations O Won!, click to play again');
+
+                resetAll();
+            }
+            else {
+                allFilled();
+            }
+        }
+
+        function allFilled() {
+            if (but1.innerHTML != '' && but2.innerHTML != '' && but3.innerHTML != '' &&
+                but4.innerHTML != '' && but5.innerHTML != '' && but6.innerHTML != '' &&
+                but7.innerHTML != '' && but8.innerHTML != '' && but9.innerHTML != '') {
+
+                window.alert('Draw, click to play again');
+                resetAll();
+            }
+        }
+
+        function resetAll() {
+            but1.disabled = false;
+            but2.disabled = false;
+            but3.disabled = false;
+            but4.disabled = false;
+            but5.disabled = false;
+            but6.disabled = false;
+            but7.disabled = false;
+            but8.disabled = false;
+            but9.disabled = false;
+
+            but1.innerHTML = '';
+            but2.innerHTML = '';
+            but3.innerHTML = '';
+            but4.innerHTML = '';
+            but5.innerHTML = '';
+            but6.innerHTML = '';
+            but7.innerHTML = '';
+            but8.innerHTML = '';
+            but9.innerHTML = '';
+
+
+            but1.style.background = '#5A96E3';
+            but2.style.background = '#5A96E3';
+            but3.style.background = '#5A96E3';
+            but4.style.background = '#5A96E3';
+            but5.style.background = '#5A96E3';
+            but6.style.background = '#5A96E3';
+            but7.style.background = '#5A96E3';
+            but8.style.background = '#5A96E3';
+            but9.style.background = '#5A96E3';
+        }
+
+    </script>
+</body>
+
+</html>
